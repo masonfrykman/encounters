@@ -1,4 +1,4 @@
-const API_HOST = "https://encounters.api.frykman.dev/";
+const API_HOST = "https://encounters.api.frykman.dev";
 export var lastReadCount: number | null
 
 export async function grabData(day: string): Promise<any | number> {
