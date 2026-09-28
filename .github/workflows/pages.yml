@@ -1,0 +1,35 @@
+on:
+  push:
+    branches:
+    - main
+
+jobs:
+  vite-build-production:
+    name: Build w/ Vite
+    runs-on: "ubuntu-latest"
+    steps:
+    - uses: actions/checkout@v5
+    - uses: actions/setup-node@v6
+      with:
+        node-version: "v25.x"
+        cache-dependency-path: "package-lock.json"
+    - run: npm ci
+    - run: npm install
+    - run: npx vite build
+    - uses: actions/upload-pages-artifact@v4
+      with:
+        path: dist/
+
+  gh-pages:
+    name: Deploy to pages
+    needs: vite-build-production
+    runs-on: "ubuntu-latest"
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{steps.deployment.outputs.page_url}}
+    steps:
+    - id: deployment
+      uses: actions/deploy-pages@v4
