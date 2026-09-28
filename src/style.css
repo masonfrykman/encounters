@@ -1,0 +1,122 @@
+:root {
+  --prominent-color: yellow;
+  --default-bg: rgb(11, 10, 19);
+  --text-color: white;
+}
+
+#map {
+  width: 100%;
+  height: 90vh;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Helvetica', 'Helvetica Neue', 'Arial', sans-serif;
+  background-color: var(--default-bg);
+  color: var(--text-color);
+}
+
+.huge {
+  font-size: 48pt;
+  text-align: center;
+
+  &.lead {
+    color: yellow;
+  }
+
+  &.fullscreen {
+    font-size: 25.5vw;
+  }
+
+  margin-top: 0pt;
+  margin-bottom: 0pt;
+  padding: 0;
+}
+
+.ctrbox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &.dead {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  }
+
+  &.row {
+    flex-direction: row;
+    
+    & * {
+      padding-right: 8pt;
+    }
+  }
+}
+
+.bold {
+  font-weight: bold;
+}
+
+#timestamp-bar {
+  & ::after {
+    content: "    <>    ";
+    color: var(--text-color);
+    cursor: auto;
+  }
+  & :last-child::after {
+    content: "";
+  }
+
+  & :hover {
+    color: var(--prominent-color);
+  }
+
+  cursor: pointer;
+  text-align: center;
+  font-size: 16pt;
+}
+
+input {
+  background-color: transparent;
+  color: var(--text-color);
+  border: solid 1px black;
+  padding: 5px;
+  width: 3in;
+  border-radius: 5pt;
+
+  &.prominent {
+    border-color: yellow;
+  }
+}
+
+.prominent {
+  color: yellow;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    color: var(--prominent-color)
+  }
+
+  &:disabled {
+    color: gray
+  }
+
+  &:invalid {
+    color: red;
+  }
+}
+
+#count {
+  font-style: italic;
+
+  &:hover::before {
+    content: "[toggle]  ";
+  }
+}
+
