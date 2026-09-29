@@ -89,6 +89,10 @@ input {
   &.prominent {
     border-color: yellow;
   }
+
+  &.badinput {
+    border-color: red;
+  }
 }
 
 .prominent {
@@ -120,3 +124,46 @@ a {
   }
 }
 
+@keyframes fade {
+  0% {
+    background-color: transparent;
+    color: var(--text-color);
+  }
+
+  100% {
+    background-color: var(--prominent-color);
+    color: var(--default-bg)
+  }
+}
+
+button {
+  border: 1px solid;
+  border-color: var(--prominent-color);
+  border-radius: 5px;
+  background-color: transparent;
+  color: var(--text-color);
+
+  &:hover {
+    background-color: var(--prominent-color);
+    color: var(--default-bg);
+    animation: fade 90ms ease-in-out;
+  }
+
+  padding: 4px;
+}
+
+td {
+  border: 1px solid;
+  border-color: var(--prominent-color);
+  border-spacing: 0;
+  margin-top: 0;
+  padding: 3px;
+}
+
+th {
+  background-color: var(--prominent-color);
+  border-spacing: 0;
+  margin-top: 0;
+  padding: 3px;
+  color: var(--default-bg)
+}

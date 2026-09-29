@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/style.css" />
+    <title>HAVE WE SPECIFICALLY ENCOUNTERED?!</title>
+  </head>
+  <body>
+    <div class="ctrbox row" id="toolbar">
+      <a style="margin-right: 10pt" href="..">(go back)</a>
+      <h1>Have we <span class="prominent">encountered?</span></h1>
+    </div>
+    <div class="ctrbox" id="table-container">
+      <table hidden id="device-table" style="align-self: center">
+        <thead>
+          <tr>
+            <th scope="col">Timestamp (msEpoch)</th>
+            <th scope="col">Bluetooth UUID</th>
+            <th scope="col">Bluetooth Name</th>
+            <th scope="col">RSSI</th>
+            <th scope="col">Latitude</th> 
+            <th scope="col">Longitude</th>
+          </tr>
+        </thead>
+        <tbody id="device-table-body"></tbody>
+      </table>
+    </div>
+    <div class="ctrbox row">
+      <p id="footer-devicelistctrl" hidden><a href="javascript:deviceListBack()">[last 10 entries]</a> <a href="javascript:deviceListFwd()">[next 10 entries]</a> <p class="prominent" id="devl-count" hidden>(0)</p></p>
+    </div>
+    <script type="module" src="/src/search.ts"></script>
+  </body>
+</html>

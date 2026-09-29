@@ -41,3 +41,22 @@ export async function grabData(day: string): Promise<any | number> {
 
     return json
 }
+
+export async function search(btid: string): Promise<any | number> {
+    let r = new Request(API_HOST + "/search/" + btid);
+    let resp = await fetch(r);
+    if(!resp.ok) {
+        return resp.status;
+    }
+
+    let json = await resp.json()
+    if(json == null) {
+        return -2;
+    }
+
+    if(resp.headers.has("X-Count")) {
+        lastReadCount = Number.parseInt(resp.headers.get("X-Count")!)
+    }
+
+    return json
+}

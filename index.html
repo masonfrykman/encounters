@@ -17,7 +17,10 @@
         <a href="javascript:nav_date('thursday', 'uic')">Thursday, September 24</a>
       </div>
       <h1 class="huge lead fullscreen" id="encountered-leading"><i>encountered?</i> **</h1>
-      <input disabled placeholder="Search by Bluetooth Device ID (XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX)" class="prominent"/>
+      <div id="ctrbox row">
+        <input id="searchbox" placeholder="Search by Bluetooth Device ID (XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX)" class="prominent"/>
+        <button id="btid-search-btn" onclick="nav_search()">Search</button>
+      </div>
       <div class="ctrbox bold">
         <p><span>*: our bluetooth devices</span> <span class="prominent">**: been in range</span></p>
       </div>
