@@ -6,8 +6,8 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
-        map: resolve(__dirname, 'public/map.html'),
-        search: resolve(__dirname, 'public/search.html')
+        map: resolve(__dirname, 'map.html'),
+        search: resolve(__dirname, 'search.html')
       }
     }
   },
